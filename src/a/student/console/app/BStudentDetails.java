@@ -2,18 +2,20 @@ package a.student.console.app;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class BStudentDetails {
 
 
     private String name;
     private int age;
-    private int studentID;
+    private String studentID;
     private List<String> coursesList;
 
-    BStudentDetails(String name, int age, int studentID)
+    BStudentDetails(String name, int age, String studentID)
     {
-        if(validateData(age)) {
+        if(validateStudentAge(age) && validateStudentName(name) && validateStudentID(studentID))  {
             this.name = name;
             this.age = age;
             this.studentID = studentID;
@@ -41,7 +43,7 @@ public class BStudentDetails {
     }
 
 
-    public boolean validateData(int age)
+    private boolean validateStudentAge(int age)
     {
         if(age >=14 && age<=70)
         {
@@ -54,6 +56,45 @@ public class BStudentDetails {
         return false;
     }
 
+
+    private boolean validateStudentName(String name)
+    {
+        // In the following code where we have used regular expression , where A-Z Alphabets are allowed with following formats : 1) Uppercase 2) Lowercase
+        // \\s is the regular expression which helps to allowed spaces within the names
+        // +$ which helps String must be ended with Alphabet
+
+        String namePattern = "^[a-zA-Z\\s]+$";
+        Pattern compileTheGivenPattern = Pattern.compile(namePattern);
+        Matcher matchPatternResult = compileTheGivenPattern.matcher(name);
+
+        if(matchPatternResult.matches())
+        {
+            return true;
+        }
+        else
+        {
+            System.err.println("Name is Invalid, Only Alphabets are allowed");
+        }
+        return false;
+    }
+
+    private boolean validateStudentID(String studentID)
+    {
+        String idPattern = "^[a-zA-Z]-\\d+$";
+        Pattern compilePatternNumber = Pattern.compile(idPattern);
+        Matcher matchPatternNumberResult = compilePatternNumber.matcher(studentID);
+
+        if (matchPatternNumberResult.matches())
+        {
+            return true;
+        }
+        else
+        {
+            System.out.println("Invalid Student ID, ");
+            return false;
+        }
+
+    }
 
     public static void main(String[] args) {
         System.out.println("Step 1 - Declare Instance (Non Static )Variable within the class");

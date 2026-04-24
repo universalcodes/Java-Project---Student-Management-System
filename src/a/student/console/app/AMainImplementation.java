@@ -9,10 +9,29 @@ public class AMainImplementation {
         System.out.println("Step 3 - Optional call printFirstStudentDetails directly to print all Variables in Single line use ToString() method");
 
 
+        //Usecase 1 Data
+        BStudentDetails printFirstStudentDetails1 = new BStudentDetails("JAVA USER", 16, "A-34567");
+        //Usecase 2 Data
+        BStudentDetails printFirstStudentDetails2 = new BStudentDetails("JaVa UsER", 16, "T-34562");
+        //Usecase 3 Data
+        BStudentDetails printFirstStudentDetails3 = new BStudentDetails("java User", 16, "v-35451");
+        //Usecase 4 Data
+        BStudentDetails printFirstStudentDetails4 = new BStudentDetails("Java", 16, "D-34562");
+        //Usecase 5 Data
+        BStudentDetails printFirstStudentDetails5 = new BStudentDetails("java Important User", 16, "f-23456");
+        //Usecase 6 Data
+        BStudentDetails printFirstStudentDetails6 = new BStudentDetails("java Important User", 16, "f-234561A");
+        //Usecase 6 Data
+        BStudentDetails printFirstStudentDetails7 = new BStudentDetails("java Important User", 16, "%3456");
 
 
-        BStudentDetails printFirstStudentDetails = new BStudentDetails("Yogesh", 89, 1);
-        System.out.println(printFirstStudentDetails); // printing the student details through methods
-     //   printFirstStudentDetails.retraiveStudentInfo(); // printing the method based on toString method
+        System.out.println(printFirstStudentDetails1); // printing the student details through methods
+        System.out.println(printFirstStudentDetails2); // printing the student details through methods
+        System.out.println(printFirstStudentDetails3); // printing the student details through methods
+        System.out.println(printFirstStudentDetails4); // printing the student details through methods
+        System.out.println(printFirstStudentDetails5); // printing the student details through methods
+        System.out.println(printFirstStudentDetails6); // printing the student details through methods
+        System.out.println(printFirstStudentDetails7); // printing the student details through methods
+        //printFirstStudentDetails.retraiveStudentInfo(); // printing the method based on toString method
     }
 }
