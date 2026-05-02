@@ -1,6 +1,7 @@
 package a.student.console.app;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -9,10 +10,26 @@ public class BStudentDetails {
 
 
     private String name;
-    private int age;
-    private String studentID;
-    private List<String> coursesList;
+    public String getStudentName() {
+        return name;
+    }
 
+
+    private int age;
+    public int getStudentAge() {
+        return age;
+    }
+
+
+    private String studentID;
+    public String getStudentID() {
+        return studentID;
+    }
+
+    private List<String> coursesList;
+    public List<String> getCourseList() {
+        return coursesList;
+    }
     BStudentDetails(String name, int age, String studentID) {
         if (validateStudentAge(age) && validateStudentName(name) && validateStudentID(studentID)) {
             this.name = name;
@@ -105,6 +122,10 @@ public class BStudentDetails {
             return false;
         }
     }
+
+
+
+
         public static void main (String[] args){
             System.out.println("Step 1 - Declare Instance (Non Static )Variable within the class");
             System.out.println("Step 2 - Create Constructor & Define All Instance (Non Static ) Variable using this keyword ");
