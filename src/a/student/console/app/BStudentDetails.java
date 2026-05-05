@@ -72,7 +72,7 @@ public class BStudentDetails {
 
 
     private boolean validateStudentName(String name) {
-        // In the following code where we have used regular expression , where A-Z Alphabets are allowed with following formats : 1) Uppercase 2) Lowercase
+        // In the following code where we have used regular expression , where A-Z Alphabets are allowed with the following formats : 1) Uppercase 2) Lowercase
         // \\s is the regular expression which helps to allowed spaces within the names
         // +$ which helps String must be ended with Alphabet
 
